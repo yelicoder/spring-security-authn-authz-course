@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mod3_crypto_portfolio/mod3_crypto_portfolio.iml" filepath="$PROJECT_DIR$/mod3_crypto_portfolio/mod3_crypto_portfolio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mod3_malicious_site/mod3_malicious_site.iml" filepath="$PROJECT_DIR$/mod3_malicious_site/mod3_malicious_site.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_3.iml" filepath="$PROJECT_DIR$/module_3.iml" />
+    </modules>
+  </component>
+</project>

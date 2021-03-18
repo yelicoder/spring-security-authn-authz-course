@@ -41,7 +41,7 @@ public class WebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WebApplication.class, args);
 	}
-	
+
 	@Bean
     public ServletWebServerFactory servletContainer() {
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
@@ -55,7 +55,7 @@ public class WebApplication {
                 context.addConstraint(securityConstraint);
             }
         };
-        tomcat.addAdditionalTomcatConnectors(redirectConnector());
+       tomcat.addAdditionalTomcatConnectors(redirectConnector());
         return tomcat;
     }
 

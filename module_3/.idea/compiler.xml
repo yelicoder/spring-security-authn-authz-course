@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mod3_malicious_site" />
+        <module name="mod3_crypto_portfolio" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mod3_crypto_portfolio" target="1.8" />
+      <module name="mod3_malicious_site" target="1.8" />
+      <module name="module_3" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mod3_crypto_portfolio" options="-parameters" />
+      <module name="mod3_malicious_site" options="-parameters" />
+    </option>
+  </component>
+</project>
