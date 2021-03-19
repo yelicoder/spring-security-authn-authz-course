@@ -1,5 +1,6 @@
 server:
   port: 8443
+
   ssl:
     key-store-password: password
     key-store: classpath:keystore.p12
@@ -24,3 +25,4 @@ logging:
     com.memorynotfound: INFO
     org.springframework.web: INFO
     org.springframework.security: INFO
+    org.h2: DEBUG

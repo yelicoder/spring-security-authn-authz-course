@@ -71,5 +71,4 @@ public class WebApplication {
         connector.setRedirectPort(8443);
         return connector;
     }
-	
 }

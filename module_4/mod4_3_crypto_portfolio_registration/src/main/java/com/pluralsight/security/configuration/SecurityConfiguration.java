@@ -30,9 +30,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Bean
 	public PasswordEncoder getPasswordEncoder() {
+
 		DelegatingPasswordEncoder encoder =  (DelegatingPasswordEncoder)PasswordEncoderFactories.createDelegatingPasswordEncoder();
 		encoder.setDefaultPasswordEncoderForMatches(new BCryptPasswordEncoder());
-		return encoder;	
+		return encoder;
 	}	
 
 }

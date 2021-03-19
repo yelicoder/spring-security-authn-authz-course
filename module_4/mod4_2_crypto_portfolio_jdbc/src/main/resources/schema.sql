@@ -1,9 +1,9 @@
 --DROP TABLE USER;
 --DROP TABLE TRANSACTIONS;
 --CREATE TABLE IF NOT EXISTS USER (ID INT PRIMARY KEY, USERNAME VARCHAR(30), EMAIL VARCHAR(30),PASSWORD VARCHAR(30) );
-drop table users;
-drop table authorities ;
-drop table TRANSACTIONS;
+drop table if exists users;
+drop table if exists authorities ;
+drop table if exists TRANSACTIONS;
 create table users(
 	username varchar_ignorecase(50) not null primary key,
 	password varchar_ignorecase(50) not null,
