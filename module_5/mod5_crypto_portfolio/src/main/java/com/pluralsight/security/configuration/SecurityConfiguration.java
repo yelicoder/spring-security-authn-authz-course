@@ -37,7 +37,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.addFilterBefore(totpAuthFilter, UsernamePasswordAuthenticationFilter.class).
-		authorizeRequests().antMatchers("/register", "/login", "/login-error", "/login-verified", "/verify/email", "/qrcode").permitAll()
+		authorizeRequests().antMatchers("/register", "/login", "/login-error",
+				"/login-verified", "/verify/email", "/qrcode").permitAll()
 		.antMatchers("/totp-login","/totp-login-error").hasAuthority(Authorities.TOTP_AUTH_AUTHORITY)
 		.antMatchers("/support/admin/**").hasRole("ADMIN")
 		.anyRequest().hasRole("USER").and()

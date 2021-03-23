@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -32,6 +33,9 @@ public class UserDetailsServiceNoSql implements UserDetailsService {
 		if (user == null) {
 			throw new UsernameNotFoundException(username);
 		}
+
+		//return User.withUsername(user.getUsername()).password(user.getPassword()).roles("USER").disabled(!user.isVerified()).build();
+
 		List<String> authorities = new ArrayList<>();
 		if(user.isTotpEnabled()) {
 			authorities.add(Authorities.TOTP_AUTH_AUTHORITY);
