@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.DelegatingPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -51,10 +52,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.and().formLogin().loginPage("/login").successHandler(new AuthenticationSuccessHandlerImpl()).failureUrl("/login-error")
 		.authenticationDetailsSource(new AdditionalAuthenticationDetailsSource())
 		.and().exceptionHandling().accessDeniedHandler(accessDeniedHandler)
+		/* for hash-based remember me token
+		.and().rememberMe()
+		 */
+		// for persistent token cookie
 		.and().rememberMe().key("remember-me-key").tokenRepository(persistentTokenRepository)
-		.authenticationSuccessHandler(new AuthenticationSuccessHandlerImpl())
 		.and().logout().logoutUrl("/logout").logoutSuccessUrl("/login")
-		.deleteCookies("remember-me");
+		.deleteCookies("remember-me")
+		;
 
 	}
 	
@@ -92,8 +97,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Bean
 	public PasswordEncoder getPasswordEncoder() {
+		/*
 		DelegatingPasswordEncoder encoder =  (DelegatingPasswordEncoder)PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		return encoder;	
+		return encoder;
+		 */
+
+		return new BCryptPasswordEncoder();
 	}	
 
 }
