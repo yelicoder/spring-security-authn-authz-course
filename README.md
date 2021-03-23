@@ -38,3 +38,6 @@ $ export VAULT_TOKEN="s.XmpNPoi9sRhYtdKHaQhkHP6x"
 $ vault status
 
 
+### Module 5
+Not able to delete the remember me cookie after logout. Invalid csrf token
+
