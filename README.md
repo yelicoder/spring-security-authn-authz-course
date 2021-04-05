@@ -41,3 +41,6 @@ $ vault status
 ### Module 5
 Not able to delete the remember me cookie after logout. Invalid csrf token
 
+### Module 6
+Hard-coded a registered user
+
